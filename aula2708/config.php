@@ -76,5 +76,32 @@ function criarLinkMenu($pagina, $icone, $nome) {
     return $html;
 }
 
+function pesquisaDinamica($action, $name, $inputname) {
+   $html = '    <main>
+
+<form class="login" action="'.$action.'" method="GET">
+    <h1> '.$name.' </h1>
+
+    <div class="campo">
+        <ion-icon name="search-outline"></ion-icon>
+        Pesquisa 
+        <input
+        class="input-login"
+        type="text"
+        name="'.$inputname.'"
+        placeholder="Digite sua pesquisa"
+        required
+        >
+    </div>
+
+    <div class="botoes"> 
+    <button type="submit" class="btn ativo"> Pesquisa </button>
+    <button type="reset" class="btn ativo"> Limpar </button>
+    </div>
+</form>
+</main>';
+
+return $html;
+}
 
 ?>

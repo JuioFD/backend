@@ -2,31 +2,7 @@
 include 'config.php';
 echo criarTopo("Página principal");
 
-?>
-    <main>
-<h1> Pinterest </h1>
+echo pesquisaDinamica("https://br.pinterest.com/search", "Pinterest", "q");
 
-<form class="login" action="https://br.pinterest.com/search" method="GET">
-    <h1> Pinterest </h1>
-
-    <div class="campo">
-        <input
-        class="input-login"
-        type="text"
-        name="q"
-        placeholder="Digite sua pesquisa no Pinterest"
-        required
-        >
-    </div>
-
-   <div class="botoes"> 
-    <button type="submit" class="btn ativo"> Pesquisa </button>
-    <button type="reset" class="btn ativo"> Limpar </button>
-    </div>
-</form>
-</main>
-
-
-<?php
 echo criarRodape("");
 ?>

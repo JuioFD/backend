@@ -2,33 +2,7 @@
 include 'config.php';
 echo criarTopo("Página principal");
 
-?>
-    <main>
-<h1> Google </h1>
+echo pesquisaDinamica("https://www.google.com/search", "Google", "q");
 
-<form class="login" action="https://www.google.com/search" method="GET">
-    <h1> Pesquisa Google </h1>
-
-    <div class="campo">
-        <ion-icon name="search-outline"></ion-icon>
-        Pesquisa 
-        <input
-        class="input-login"
-        type="text"
-        name="q"
-        placeholder="Digite sua pesquisa"
-        required
-        >
-    </div>
-
-    <div class="botoes"> 
-    <button type="submit" class="btn ativo"> Pesquisa </button>
-    <button type="reset" class="btn ativo"> Limpar </button>
-    </div>
-</form>
-</main>
-
-
-<?php
 echo criarRodape("");
 ?>
