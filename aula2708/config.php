@@ -36,7 +36,9 @@ function criaMenu($logado) {
         '.criarLinkMenu("posts.php", "<ion-icon name='paper-plane-outline'></ion-icon>", "Postagens").'     
         '.criarLinkMenu("login.php", '<ion-icon name="lock-closed-outline"></ion-icon>', "Acessar").'                        
         '.criarLinkMenu("atv2708.php", '<ion-icon name="bug-outline"></ion-icon>', "27/08").'                         
-        '.criarLinkMenu("contato.php", '<ion-icon name="paper-plane-outline"></ion-icon>', "Contato").'  
+        '.criarLinkMenu("contato.php", '<ion-icon name="paper-plane-outline"></ion-icon>', "Contato").'
+        '.criarLinkMenu("pesquisa.php", '<ion-icon name="search-outline"></ion-icon>', "Pesquisa").'
+        '.criarLinkMenu("pinterest.php", '<ion-icon name="logo-pinterest"></ion-icon>', "Pinterest").'
         </nav>';
     }
 
