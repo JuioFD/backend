@@ -1,6 +1,6 @@
 <?php
 
-function criarTopo($logado) {
+function criarTopo($logado = 0) {
     return '<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,7 +15,7 @@ function criarTopo($logado) {
             <img src="img/logo.png">
             <h1>Posts-IFES</h1>
         </div>
-        '.criaMenu(0).';
+        '.criaMenu($logado).';
     </header>';
 }
 
