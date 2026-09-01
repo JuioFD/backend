@@ -32,8 +32,10 @@ echo criarTopo("formulario de login");
         >
     </div>
 
+    <div class="botoes"> 
     <button type="submit" class="btn ativo"> Login </button>
-    
+    <button type="reset" class="btn ativo"> Limpar </button>
+    </div>
     </form>
 </main>
 

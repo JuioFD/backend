@@ -19,8 +19,10 @@ echo criarTopo("Página principal");
         >
     </div>
 
+   <div class="botoes"> 
     <button type="submit" class="btn ativo"> Pesquisa </button>
     <button type="reset" class="btn ativo"> Limpar </button>
+    </div>
 </form>
 </main>
 

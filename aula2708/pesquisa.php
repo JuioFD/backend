@@ -7,7 +7,7 @@ echo criarTopo("Página principal");
 <h1> Google </h1>
 
 <form class="login" action="https://www.google.com/search" method="GET">
-    <h1> Formulario de Login </h1>
+    <h1> Pesquisa Google </h1>
 
     <div class="campo">
         <ion-icon name="search-outline"></ion-icon>
@@ -21,8 +21,10 @@ echo criarTopo("Página principal");
         >
     </div>
 
+    <div class="botoes"> 
     <button type="submit" class="btn ativo"> Pesquisa </button>
     <button type="reset" class="btn ativo"> Limpar </button>
+    </div>
 </form>
 </main>
 
