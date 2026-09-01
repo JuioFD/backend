@@ -19,7 +19,7 @@ if($login == "admin" && $senha == "123") {
     echo  "acesso liberado";
 }
 else {
-    echo "errou KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK";
+    echo "errou";
 }
 
 ?>
