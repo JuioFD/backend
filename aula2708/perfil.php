@@ -4,8 +4,13 @@ include 'config.php';
 
 $logado = $_SESSION["logado"];
 
-echo $logado;
+if ($logado == 1) {
+    echo criarTopo($logado);
+    echo criarRodape("");
+}
 
-echo criarTopo($logado);
-echo criarRodape("");
+else {
+header("Location: index.php");
+}
+
 ?>

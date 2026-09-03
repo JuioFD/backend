@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 include 'config.php';
 
 echo criarTopo("formulario de login");
