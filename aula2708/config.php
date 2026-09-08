@@ -103,4 +103,33 @@ function pesquisaDinamica($action, $name, $inputname) {
 return $html;
 }
 
+function criaMensagem($tipo, $mensagem) {
+   
+    $tipomsg = "";
+    $icone = "";
+
+    if ($tipo == 0) {
+        $tipomsg = "mensagem-erro";
+        $icone = '<ion-icon name="close-circle-outline"></ion-icon>';
+    }
+    
+    else {
+        $tipomsg = "mensagem-sucesso";
+        $icone = '<ion-icon name="checkmark-circle-outline"></ion-icon>';
+    }
+
+    $html = '<div class="mensagem '.$tipomsg.'">
+        '.$icone.'
+        '.$mensagem.'
+    </div>';
+
+    return $html;
+}
+
+function paginaRestrita($logado) {
+
+    if ($logado != 1) {
+    header("Location: login.php");
+    }
+}
 ?>

@@ -2,15 +2,30 @@
 session_start();
 include 'config.php';
 
-$logado = $_SESSION["logado"];
+$logado = 0;
 
-if ($logado == 1) {
-    echo criarTopo($logado);
-    echo criarRodape("");
+if (isset($_SESSION["logado"])) {
+    $logado = $_SESSION["logado"];
 }
 
-else {
-header("Location: index.php");
+paginaRestrita($logado);
+
+if ($logado == 1) {
+
+    echo criarTopo($logado);
+
+    if (isset($_SESSION['mensagem'])) {
+
+        echo criaMensagem(
+            $_SESSION['tipo'],
+            $_SESSION['mensagem']
+        );
+
+        unset($_SESSION['tipo']);
+        unset($_SESSION['mensagem']);
+    }
+
+    echo criarRodape("");
 }
 
 ?>

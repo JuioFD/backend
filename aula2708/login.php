@@ -11,6 +11,19 @@ echo criarTopo("formulario de login");
     <form class="login" action="teste.php" method="POST">
     <h1> Formulario de Login </h1>
 
+<?php 
+
+if (isset($_SESSION['mensagem'])) {
+    echo criaMensagem (
+        $_SESSION['tipo'],
+        $_SESSION['mensagem']
+    );
+
+    unset($_SESSION['tipo']);
+    unset($_SESSION['mensagem']);
+}
+?>
+
     <div class="campo">
         <ion-icon name="person-outline"></ion-icon>
         Usuário
