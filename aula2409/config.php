@@ -27,6 +27,7 @@ function criaMenu($logado) {
         $menu = '<nav> 
         '.criarLinkMenu("perfil.php", '<ion-icon name="person-outline"></ion-icon>', "Perfil").'            
         '.criarLinkMenu("posts.php", '<ion-icon name="add-outline"></ion-icon>', "Cadastrar Postagem").'    
+        '.criarLinkMenu("cadastrar-usuario.php", '<ion-icon name="log-in-outline"></ion-icon>', "Cadastrar Usuario").'
         '.criarLinkMenu("sair.php", '<ion-icon name="exit-outline"></ion-icon>', "Sair").'        
         </nav>';
     }
@@ -73,6 +74,43 @@ function criarLinkMenu($pagina, $icone, $nome) {
                 '.$icone.' '.$nome.'
             </a>';
     return $html;
+}
+
+function criarCadastro() {
+    return '<main>
+    <form class="login" action="inserir_usuario.php" method="POST">
+    <h1> Formulario de Login </h1>
+
+
+    <div class="campo">
+        <ion-icon name="person-outline"></ion-icon>
+        Usuário
+        <input
+        class="input-login"
+        type="text"
+        name="email"
+        placeholder="e-mail"
+        required
+        >
+    </div>
+
+    <div class="campo">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        Senha
+        <input 
+        class="input-senha"
+        type="password"
+        name="senha"
+        placeholder="senha"
+        required
+        >
+
+    <div class="botoes"> 
+    <button type="submit" class="btn ativo"> Cadastrar </button>
+    <button type="reset" class="btn ativo"> Limpar </button>
+    </div>
+    </form>
+    </div>';
 }
 
 function pesquisaDinamica($action, $name, $inputname) {
