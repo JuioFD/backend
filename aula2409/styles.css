@@ -263,3 +263,88 @@ ion-icon {
     }
 
 }
+
+.tabela-container {
+    width: 100%;
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.tabela-usuarios th {
+    padding: 12px 14px;
+
+    background-color: #363636;
+    color: white;
+
+    text-align: left;
+    font-size: 14px;
+}
+
+.tabela-usuarios td {
+    padding: 12px 14px;
+
+    border-bottom: 1px solid #ddd;
+
+    font-size: 14px;
+    color: #333;
+}
+
+.tabela-usuarios tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela-usuarios th:first-child,
+.tabela-usuarios td:first-child {
+    width: 90px;
+    text-align: center;
+}
+
+.tabela-usuarios th:nth-child(2),
+.tabela-usuarios td:nth-child(2) {
+    width: 50px;
+    text-align: center;
+}
+
+.acoes {
+    white-space: nowrap;
+}
+
+.acoes .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    margin: 0 2px;
+
+    border-radius: 4px;
+}
+
+.acoes ion-icon {
+    margin: 0;
+    font-size: 17px;
+}
+
+.editar {
+    background-color: #363636;
+    color: white;
+}
+
+.excluir {
+    background-color: #e66610;
+    color: white;
+}
+
+.editar:hover,
+.excluir:hover {
+    opacity: 0.85;
+}
