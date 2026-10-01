@@ -5,7 +5,6 @@ include "conexao.php";
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-
 $sql = "INSERT INTO usuarios (email, senha)
         VALUES ('$email', '$senha')";
     

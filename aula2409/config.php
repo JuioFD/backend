@@ -15,7 +15,7 @@ function criarTopo($logado = 0) {
             <img src="img/logo.png">
             <h1>Posts-IFES</h1>
         </div>
-        '.criaMenu($logado).';
+        '.criaMenu($logado).'
     </header>';
 }
 
@@ -47,7 +47,7 @@ function criaMenu($logado) {
 
 function criarRodape($rodape) {
     $rodape = ' <footer class="dflex-center">
-        <p>&copy; 2024 Postagens. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Postagens. Todos os direitos reservados.</p>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
