@@ -31,8 +31,8 @@ if (mysqli_num_rows($result) > 0) {
                     <td class='acoes'>
 
                         <a class='btn editar'
-                        href='editar-usuario.php?id=" . $row["id"] . "'>
-                            <ion-icon name='create-outline'></ion-icon>
+                        href='buscar.usuario.php?id=" . $row["id"] . "'>
+                            <ion-icon name='search-circle-outline'></ion-icon>
                         </a>
 
                         <a class='btn excluir'
