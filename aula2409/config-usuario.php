@@ -24,7 +24,7 @@ function editarUsuario($idAntigo, $idNovo, $email, $senha) {
 function formularioEdicao($idUsuario, $emailUsuario, $senhaUsuario) {
     return '<main>
 
-<form class="login editar-usuario" action="editar-usuario.php?id='.$idUsuario.'" method="POST">
+<form class="login editar-usuario" action="editar-usuario.php?idAntigo='.$idUsuario.'" method="POST">
     <h1> Formulario de Edição </h1>
 
 
