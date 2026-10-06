@@ -1,8 +1,10 @@
 <?php
 require('conexao.php');
-require('editar-usuario.php');
+require('config-usuario.php');
 
-$id = $_POST["id"];
+
+$idAntigo = $_GET["id"];
+$idNovo = $_POST["id"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
