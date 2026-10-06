@@ -17,7 +17,7 @@ function formularioEdicao($idUsuario, $emailUsuario, $senhaUsuario) {
     return '<main>
 
 <form class="login" action="editar-usuario.php" method="POST">
-    <h1> Formulario de Cadastro </h1>
+    <h1> Formulario de Edição </h1>
 
 
     <div class="campo">
@@ -58,7 +58,7 @@ function formularioEdicao($idUsuario, $emailUsuario, $senhaUsuario) {
         >
 
     <div class="botoes"> 
-        <button type="submit" class="btn ativo"> Cadastrar </button>
+        <button type="submit" class="btn ativo"> Editar </button>
         <button type="reset" class="btn ativo"> Limpar </button>
         </div>
         </form>
