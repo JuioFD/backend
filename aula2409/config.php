@@ -28,6 +28,7 @@ function criaMenu($logado) {
         '.criarLinkMenu("perfil.php", '<ion-icon name="person-outline"></ion-icon>', "Perfil").'            
         '.criarLinkMenu("posts.php", '<ion-icon name="add-outline"></ion-icon>', "Cadastrar Postagem").'    
         '.criarLinkMenu("cadastrar-usuario.php", '<ion-icon name="log-in-outline"></ion-icon>', "Cadastrar Usuario").'
+        '.criarLinkMenu("lista_usuario.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Usuario").'
         '.criarLinkMenu("sair.php", '<ion-icon name="exit-outline"></ion-icon>', "Sair").'        
         </nav>';
     }

@@ -1,12 +1,14 @@
 <?php
 
+session_start();
+
 require("conexao.php");
 require("config.php");
 
 $sql = "SELECT * FROM usuarios";
 $result = mysqli_query($conn, $sql);
 
-echo criarTopo(0);
+echo criarTopo(1);
 
 if (mysqli_num_rows($result) > 0) {
 
