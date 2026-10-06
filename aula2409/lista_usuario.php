@@ -18,7 +18,7 @@ if (mysqli_num_rows($result) > 0) {
 
             <table class='tabela-usuarios'>
                 <tr>
-                    <th>Ações</th>
+                    <th>Botoes</th>
                     <th>ID</th>
                     <th>Email</th>
                     <th>Senha</th>

@@ -80,7 +80,7 @@ function criarLinkMenu($pagina, $icone, $nome) {
 function criarCadastro() {
     return '<main>
     <form class="login" action="inserir_usuario.php" method="POST">
-    <h1> Formulario de Login </h1>
+    <h1> Formulario de Cadastro </h1>
 
 
     <div class="campo">

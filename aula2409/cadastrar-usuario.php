@@ -2,7 +2,7 @@
 
 require ("config.php");
 
-echo criarTopo("");
+echo criarTopo(1);
 echo criarCadastro("");
 echo criarRodape("");
 
