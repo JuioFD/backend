@@ -16,7 +16,7 @@ return $dados;
 function formularioEdicao($idUsuario, $emailUsuario, $senhaUsuario) {
     return '<main>
 
-<form class="login" action="editar-usuario.php" method="POST">
+<form class="login editar-usuario" action="editar-usuario.php" method="POST">
     <h1> Formulario de Edição </h1>
 
 

@@ -44,7 +44,7 @@ if (mysqli_num_rows($result) > 0) {
 
                     <td>" . $row["id"] . "</td>
                     <td>" . $row["email"] . "</td>
-                    <td>" . $row["senha"] . "</td>
+                    <td>" . md5($row["senha"]) . "</td>
                 </tr>";
     }
 

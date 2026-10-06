@@ -348,3 +348,59 @@ ion-icon {
 .excluir:hover {
     opacity: 0.85;
 }
+
+.editar-usuario {
+    width: 500px;
+    margin: 40px auto;
+    padding: 35px;
+
+    background: linear-gradient(180deg, #ffffff, #f1f1f1);
+
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+
+    box-shadow: 0 6px 18px #00000020;
+}
+
+.editar-usuario h1 {
+    text-align: center;
+    color: #363636;
+    margin-bottom: 10px;
+}
+
+.editar-usuario .campo {
+    font-weight: 500;
+    color: #363636;
+}
+
+.editar-usuario .input-login,
+.editar-usuario .input-senha {
+    background-color: white;
+
+    border: 1px solid #cfcfcf;
+    border-radius: 7px;
+
+    transition: 0.2s;
+}
+
+.editar-usuario .input-login:focus,
+.editar-usuario .input-senha:focus {
+    border-color: #e66610;
+    box-shadow: 0 0 0 2px #e6661025;
+}
+
+.editar-usuario .botoes {
+    margin-top: 10px;
+}
+
+.editar-usuario .botoes .btn {
+    border-radius: 7px;
+}
+
+.editar-usuario .botoes .btn:first-child {
+    background-color: #363636;
+}
+
+.editar-usuario .botoes .btn:first-child:hover {
+    background-color: #e66610;
+}

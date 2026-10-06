@@ -16,9 +16,8 @@ if ($usuario != "") {
     $emailUsuario = $usuario["email"];
     $senhaUsuario = $usuario["senha"];
 
-    echo "Usuario Encontrado! ID: ".$usuario["id"]. " com o email: ".$usuario["email"];
-
     echo formularioEdicao($idUsuario, $emailUsuario, $senhaUsuario);
 }
-?>
 
+echo criarRodape("");
+?>
