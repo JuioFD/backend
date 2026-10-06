@@ -13,6 +13,14 @@ if (mysqli_num_rows($resultado) > 0 ) {
 return $dados;
 }
 
+function editarUsuario($idAntigo, $idNovo, $email, $senha) {
+    global $conn;
+
+    $sql = "UPDATE usuarios SET id = $idNovo, email = '$email', senha = '$senha' WHERE id = $idAntigo";
+
+    return mysqli_query($conn, $sql);
+}
+
 function formularioEdicao($idUsuario, $emailUsuario, $senhaUsuario) {
     return '<main>
 

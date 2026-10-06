@@ -1,19 +1,15 @@
 <?php
 require('conexao.php');
+require('editar-usuario.php');
 
 $id = $_POST["id"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-$sql = "UPDATE `usuarios` SET `email` = '$email', `senha` = '$senha' WHERE `usuarios`.`id` = $id";
-
-$resultado = mysqli_query($conn, $sql);
-
-if($resultado) 
-{
-    echo "Edição realizada com sucesso";
+if (editarUsuario($idAntigo, $idNovo, $email, $senha)) {
+    header("location:lista_usuario.php?tipo=1&mensagem=Usuario editado com sucesso");
 } else {
-    echo "Erro durante a edição: ". mysqli_error();
+    header("Location: lista_usuario.php?tipo=0&mensagem=Erro ao editar usuario");
 }
 
 mysqli_close($conn);
