@@ -9,7 +9,59 @@ $resultado = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($resultado) > 0 ) {
     $dados = mysqli_fetch_assoc($resultado);
-    print_r($dados);
 }
 return $dados;
+}
+
+function formularioEdicao($idUsuario, $emailUsuario, $senhaUsuario) {
+    return '<main>
+
+<form class="login" action="editar-usuario.php" method="POST">
+    <h1> Formulario de Cadastro </h1>
+
+
+    <div class="campo">
+        <ion-icon name="person-outline"></ion-icon>
+        ID
+        <input
+        class="input-login"
+        type="text"
+        name="id"
+        placeholder="id"
+        value = '.$idUsuario.'
+        required
+        >
+    </div>
+
+    <div class="campo">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        e-mail
+        <input 
+        class="input-login"
+        type="text"
+        name="email"
+        placeholder="email"
+        value = '.$emailUsuario.'
+        required
+        >
+
+    <div class="campo">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        Senha
+        <input 
+        class="input-senha"
+        type="password"
+        name="senha"
+        placeholder="senha"
+        value = '.$senhaUsuario.'
+        required
+        >
+
+    <div class="botoes"> 
+        <button type="submit" class="btn ativo"> Cadastrar </button>
+        <button type="reset" class="btn ativo"> Limpar </button>
+        </div>
+        </form>
+
+</main>';
 }

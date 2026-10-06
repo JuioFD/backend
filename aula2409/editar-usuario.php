@@ -1,9 +1,9 @@
 <?php
 require('conexao.php');
 
-$id = 3;
-$email = "1111111111111oi2email";
-$senha = "11111111111oi2senha";
+$id = $_POST["id"];
+$email = $_POST["email"];
+$senha = $_POST["senha"];
 
 $sql = "UPDATE `usuarios` SET `email` = '$email', `senha` = '$senha' WHERE `usuarios`.`id` = $id";
 
