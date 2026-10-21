@@ -1,10 +1,21 @@
 <?php
 
-require ("config.php");
+session_start();
+require("config.php");
 
-echo criarTopo(1);
-echo criarCadastro("");
-echo criarRodape("");
+$logado = @$_SESSION["logado"];
+
+paginaRestrita(
+    $logado,
+    "login.php",
+    "Necessário ter acesso para realizar o Cadastro de Usuário."
+);
+
+echo criarTopo($logado);
+
+verificaMensagem();
+
+echo criarCadastro();
+echo criarRodape();
 
 ?>
-

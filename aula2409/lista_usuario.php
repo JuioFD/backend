@@ -2,64 +2,81 @@
 
 session_start();
 
-require("conexao.php");
 require("config.php");
+require("conexao.php");
+
+$logado = @$_SESSION["logado"];
+
+paginaRestrita(
+    $logado,
+    "login.php",
+    "Para listar os usuários é necessário ter acesso."
+);
+
+echo criarTopo($logado);
+
+verificaMensagem();
 
 $sql = "SELECT * FROM usuarios";
-$result = mysqli_query($conn, $sql);
 
-echo criarTopo(1);
+$resultado = mysqli_query(
+    $conn,
+    $sql
+);
 
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($resultado) > 0) {
 
     echo "
     <main>
-        <div class='tabela-container'>
 
+        <div class='tabela-container'>
             <table class='tabela-usuarios'>
                 <tr>
-                    <th>Botoes</th>
+                   <th>Botoes</th>
                     <th>ID</th>
                     <th>Email</th>
                     <th>Senha</th>
                 </tr>";
 
-    while($row = mysqli_fetch_assoc($result)) {
+    while ($dados = mysqli_fetch_assoc($resultado)) {
 
         echo "
                 <tr>
                     <td class='acoes'>
-
-                        <a class='btn editar'
-                        href='buscar.usuario.php?id=" . $row["id"] . "'>
+                        <a
+                            class='btn editar'
+                            href='buscar.usuario.php?id=" . $dados["id"] . "'
+                        >
                             <ion-icon name='search-circle-outline'></ion-icon>
                         </a>
-
-                        <a class='btn excluir'
-                        href='deletar-usuario.php?id=" . $row["id"] . "'>
+                        <a
+                            class='btn excluir'
+                            href='deletar-usuario.php?id=" . $dados["id"] . "'
+                        >
                             <ion-icon name='trash-outline'></ion-icon>
                         </a>
-
                     </td>
-
-                    <td>" . $row["id"] . "</td>
-                    <td>" . $row["email"] . "</td>
-                    <td>" . md5($row["senha"]) . "</td>
+                    <td>" . $dados["id"] . "</td>
+                    <td>" . $dados["email"] . "</td>
+                    <td>" . md5($dados["senha"]) . "</td>
                 </tr>";
     }
 
     echo "
             </table>
-
         </div>
     </main>";
 
 } else {
-    echo "<main>Nenhum usuário encontrado!</main>";
+
+    echo "
+    <main>
+        Nenhum usuário encontrado!
+    </main>";
 }
 
 mysqli_close($conn);
 
-echo criarRodape("");
+echo criarRodape();
 
 ?>

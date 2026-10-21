@@ -1,17 +1,23 @@
 <?php
-require('conexao.php');
+
+require("conexao.php");
+require("config-usuario.php");
 
 $id = $_GET["id"];
 
-$sql = "DELETE FROM usuarios WHERE `usuarios`.`id` = $id";
+$resultado = deletarUsuario($id, $conn);
 
-$resultado = mysqli_query($conn, $sql);
+if ($resultado) {
+    header(
+        "Location: lista_usuario.php?tipo=1&mensagem=Deleção do usuário id [$id] realizada com sucesso!"
+    );
 
-if($resultado) 
-{
-    echo "Deleção realizada com sucesso";
 } else {
-    echo "Erro durante a deleção: ". mysqli_error();
+    header(
+        "Location: lista_usuario.php?tipo=0&mensagem=Erro durante a deleção do usuário"
+    );
 }
 
 mysqli_close($conn);
+
+?>

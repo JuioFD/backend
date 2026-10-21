@@ -4,17 +4,30 @@ require("conexao.php");
 require("config-usuario.php");
 
 $idAntigo = $_GET["idAntigo"];
+
 $idNovo = $_POST["id"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-if (editarUsuario($idAntigo, $idNovo, $email, $senha)) {
+$resultado = editarUsuario(
+    $idAntigo,
+    $idNovo,
+    $email,
+    $senha,
+    $conn
+);
 
-    header("Location: lista_usuario.php?tipo=1&mensagem=Usuario editado com sucesso");
+if ($resultado) {
+
+    header(
+        "Location: lista_usuario.php?tipo=1&mensagem=Edição do usuário id [$idAntigo] realizada com sucesso!"
+    );
 
 } else {
 
-    header("Location: lista_usuario.php?tipo=0&mensagem=Erro ao editar usuario");
+    header(
+        "Location: lista_usuario.php?tipo=0&mensagem=Erro durante a edição do usuário"
+    );
 }
 
 mysqli_close($conn);

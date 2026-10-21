@@ -1,13 +1,16 @@
 <?php
-include 'config.php';
-echo criarTopo("Página principal");
+
+require("config.php");
+
+echo criarTopo();
 
 ?>
-    <main>
-<h1>Olá Projeto Postagens</h1>     
+
+<main>
+    <h1>Olá Projeto Postagens</h1>
 </main>
 
-
 <?php
-echo criarRodape("");
+echo criarRodape();
+
 ?>
