@@ -13,6 +13,12 @@ function buscarUsuario($id, $conn) {
     return $dados;
 }
 
+function listarUsuarios($conn) {
+    $sql = "SELECT * FROM usuarios";
+
+    return mysqli_query($conn, $sql);
+}
+
 function inserirUsuario($email, $senha, $conn) {
     $sql = "INSERT INTO usuarios (email, senha)
             VALUES ('$email', '$senha')";

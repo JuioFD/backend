@@ -5,7 +5,8 @@ require("config.php");
 
 echo criarTopo();
 verificaMensagem();
-echo criaLogin("teste.php");
+
+echo criaLogin();
 echo criarRodape();
 
 ?>

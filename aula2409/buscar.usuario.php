@@ -16,15 +16,11 @@ paginaRestrita(
 
 $id = $_GET["id"];
 
-$usuario = buscarUsuario(
-    $id,
-    $conn
-);
+$usuario = buscarUsuario($id, $conn);
 
 echo criarTopo($logado);
 
 if ($usuario != "") {
-
     echo formularioEdicao(
         $usuario["id"],
         $usuario["email"],
@@ -33,5 +29,7 @@ if ($usuario != "") {
 }
 
 echo criarRodape();
+
 mysqli_close($conn);
+
 ?>

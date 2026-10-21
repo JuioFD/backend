@@ -1,13 +1,14 @@
-<?php 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db_name = "juio";
+<?php
 
-$conn = mysqli_connect($servername, $username, $password, $db_name);
+$conn = mysqli_connect(
+    "localhost",
+    "root",
+    "",
+    "juio"
+);
 
 if (!$conn) {
-    die("Falha na conexao " . mysqli_connect_error());
+    die("Falha na conexao: " . mysqli_connect_error());
 }
 
 ?>

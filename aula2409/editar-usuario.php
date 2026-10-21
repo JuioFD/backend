@@ -18,13 +18,10 @@ $resultado = editarUsuario(
 );
 
 if ($resultado) {
-
     header(
         "Location: lista_usuario.php?tipo=1&mensagem=Edição do usuário id [$idAntigo] realizada com sucesso!"
     );
-
 } else {
-
     header(
         "Location: lista_usuario.php?tipo=0&mensagem=Erro durante a edição do usuário"
     );

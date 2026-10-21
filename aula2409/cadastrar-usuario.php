@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
 require("config.php");
 
 $logado = @$_SESSION["logado"];
@@ -16,6 +17,7 @@ echo criarTopo($logado);
 verificaMensagem();
 
 echo criarCadastro();
+
 echo criarRodape();
 
 ?>

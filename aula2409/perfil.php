@@ -1,7 +1,9 @@
 <?php
 
 session_start();
+
 require("config.php");
+
 $logado = @$_SESSION["logado"];
 
 paginaRestrita(

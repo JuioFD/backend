@@ -4,6 +4,7 @@ session_start();
 
 require("config.php");
 require("conexao.php");
+require("config-usuario.php");
 
 $logado = @$_SESSION["logado"];
 
@@ -17,22 +18,16 @@ echo criarTopo($logado);
 
 verificaMensagem();
 
-$sql = "SELECT * FROM usuarios";
-
-$resultado = mysqli_query(
-    $conn,
-    $sql
-);
+$resultado = listarUsuarios($conn);
 
 if (mysqli_num_rows($resultado) > 0) {
 
     echo "
     <main>
-
         <div class='tabela-container'>
             <table class='tabela-usuarios'>
                 <tr>
-                   <th>Botoes</th>
+                    <th>Botoes</th>
                     <th>ID</th>
                     <th>Email</th>
                     <th>Senha</th>
@@ -49,6 +44,7 @@ if (mysqli_num_rows($resultado) > 0) {
                         >
                             <ion-icon name='search-circle-outline'></ion-icon>
                         </a>
+
                         <a
                             class='btn excluir'
                             href='deletar-usuario.php?id=" . $dados["id"] . "'
@@ -56,6 +52,7 @@ if (mysqli_num_rows($resultado) > 0) {
                             <ion-icon name='trash-outline'></ion-icon>
                         </a>
                     </td>
+
                     <td>" . $dados["id"] . "</td>
                     <td>" . $dados["email"] . "</td>
                     <td>" . md5($dados["senha"]) . "</td>
@@ -68,7 +65,6 @@ if (mysqli_num_rows($resultado) > 0) {
     </main>";
 
 } else {
-
     echo "
     <main>
         Nenhum usuário encontrado!
