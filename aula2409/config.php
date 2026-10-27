@@ -61,7 +61,7 @@ function criaMenu($logado) {
     return $menu;
 }
 
-function criarRodape($rodape) {
+function criarRodape() {
     $rodape = '<footer class="dflex-center">
         <p>&copy; 2026 Postagens. Todos os direitos reservados.</p>
     </footer>
