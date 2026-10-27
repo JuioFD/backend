@@ -1,18 +1,27 @@
-<?php 
+<?php
+
 session_start();
 
-$nome = $_POST['login'];
-$senha = $_POST['senha'];
+include("conexao.php");
+include("config-usuario.php");
+
+$nome = $_POST["login"];
+$senha = $_POST["senha"];
 $senha_cript = md5($senha);
 
-if ($nome == "admin" && $senha_cript == "202cb962ac59075b964b07152d234b70") {
-    $_SESSION["logado"] = 1;
-    $_SESSION["nome"] = $nome;
+$usuario = buscarLogin($nome, $senha_cript, $conn);
 
-    header("Location: perfil.php");
+if ($usuario != "") {
+    $_SESSION["logado"] = 1;
+    $_SESSION["nome"] = $usuario["email"];
+
+    header("Location: perfil.php?tipo=1&mensagem=Login realizado com sucesso!");
 } else {
     $_SESSION["logado"] = 0;
-    header("location: login.php?mensagem=Errou a senha ou login&tipo=0");
+
+    header("Location: login.php?tipo=0&mensagem=Usuário ou senha incorretos.");
 }
+
+mysqli_close($conn);
 
 ?>

@@ -133,12 +133,12 @@ function criarCadastro() {
 
 function criaLogin() {
     return '<main>
-    <form class="login" action="teste.php" method="POST">
+    <form class="login" action="login-acao.php" method="POST">
         <h1>Formulario de Login</h1>
 
         <div class="campo">
             <ion-icon name="person-outline"></ion-icon>
-            Usuário
+            E-mail
             <input
                 class="input-login"
                 type="text"
