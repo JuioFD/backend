@@ -4,7 +4,7 @@ require("conexao.php");
 require("config-usuario.php");
 
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha = md5($_POST["senha"]);
 
 $resultado = inserirUsuario(
     $email,

@@ -7,7 +7,7 @@ $idAntigo = $_GET["idAntigo"];
 
 $idNovo = $_POST["id"];
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha = md5($_POST["senha"]);
 
 $resultado = editarUsuario(
     $idAntigo,

@@ -101,7 +101,7 @@ function criarCadastro() {
 
         <div class="campo">
             <ion-icon name="person-outline"></ion-icon>
-            Usuário
+            Usuário ou E-Mail
             <input
                 class="input-login"
                 type="text"
@@ -138,7 +138,7 @@ function criaLogin() {
 
         <div class="campo">
             <ion-icon name="person-outline"></ion-icon>
-            E-mail
+            Usuário ou E-mail
             <input
                 class="input-login"
                 type="text"
