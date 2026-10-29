@@ -13,11 +13,8 @@ paginaRestrita(
 );
 
 echo criarTopo($logado);
-
 verificaMensagem();
-
 echo criarCadastro();
-
 echo criarRodape();
 
 ?>
