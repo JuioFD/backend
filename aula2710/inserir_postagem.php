@@ -4,7 +4,7 @@ session_start();
 require("conexao.php");
 
 function cadastrarPostagem ($titulo, $descricao, $idUsuario, $conn) {
-     $sql = "INSERT INTO postagens (titulo, descricao, dta, idUsuario) VALUES ('$titulo', '$descricao', NOW(), $idUsuario)";
+     $sql = "INSERT INTO postagem (titulo, descricao, dta, idUsuario) VALUES ('$titulo', '$descricao', NOW(), $idUsuario)";
 
      $resultado = mysqli_query($conn, $sql);
 
