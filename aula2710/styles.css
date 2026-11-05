@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
@@ -334,19 +335,26 @@ ion-icon {
     font-size: 17px;
 }
 
-.editar {
-    background-color: #363636;
-    color: white;
-}
-
-.excluir {
+.acoes .btn.editar,
+.acoes .btn.editar:visited {
     background-color: #e66610;
     color: white;
 }
 
-.editar:hover,
-.excluir:hover {
-    opacity: 0.85;
+.acoes .btn.excluir,
+.acoes .btn.excluir:visited {
+    background-color: #c62828;
+    color: white;
+}
+
+.acoes .btn.editar:hover {
+    background-color: #cc570c;
+    color: white;
+}
+
+.acoes .btn.excluir:hover {
+    background-color: #a61f1f;
+    color: white;
 }
 
 .editar-usuario {

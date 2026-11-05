@@ -42,7 +42,7 @@ function criaMenu($logado) {
     if ($logado == 1) {
         $menu = '<nav> 
         '.criarLinkMenu("perfil.php", '<ion-icon name="person-outline"></ion-icon>', "Perfil").'
-        '.criarLinkMenu("listar-postagem.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Postagens").'
+        '.criarLinkMenu("listar_postagem.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Postagens").'
         '.criarLinkMenu("cadastrar-usuario.php", '<ion-icon name="log-in-outline"></ion-icon>', "Cadastrar Usuario").'
         '.criarLinkMenu("lista_usuario.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Usuario").'
         '.criarLinkMenu("sair.php", '<ion-icon name="exit-outline"></ion-icon>', "Sair").'

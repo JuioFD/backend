@@ -42,7 +42,7 @@ if (mysqli_num_rows($resultado) > 0) {
                             class='btn editar'
                             href='buscar.usuario.php?id=" . $dados["id"] . "'
                         >
-                            <ion-icon name='search-circle-outline'></ion-icon>
+                           <ion-icon name='pencil-outline'></ion-icon>
                         </a>
 
                         <a
