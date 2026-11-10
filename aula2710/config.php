@@ -1,4 +1,3 @@
-
 <?php
 
 function verificaMensagem() {
@@ -42,11 +41,11 @@ function criaMenu($logado) {
 
     if ($logado == 1) {
         $menu = '<nav>
-        '.criarLinkMenu("perfil.php", '<ion-icon name="person-outline"></ion-icon>', "Perfil").'
         '.criarLinkMenu("cadastrar-postagem.php", '<ion-icon name="add-circle-outline"></ion-icon>', "Cadastrar Postagem").'
         '.criarLinkMenu("listar_postagem.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Postagens").'
         '.criarLinkMenu("cadastrar-usuario.php", '<ion-icon name="log-in-outline"></ion-icon>', "Cadastrar Usuario").'
         '.criarLinkMenu("lista_usuario.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Usuario").'
+        '.criarLinkMenu("perfil.php", '<ion-icon name="person-outline"></ion-icon>', "Perfil").'
         '.criarLinkMenu("sair.php", '<ion-icon name="exit-outline"></ion-icon>', "Sair").'
         </nav>';
     } else {
@@ -109,8 +108,7 @@ function criarCadastro() {
                 type="text"
                 name="email"
                 placeholder="e-mail"
-                required
-            >
+                required>
         </div>
 
         <div class="campo">
@@ -121,8 +119,7 @@ function criarCadastro() {
                 type="password"
                 name="senha"
                 placeholder="senha"
-                required
-            >
+                required>
         </div>
 
         <div class="botoes">
@@ -146,8 +143,7 @@ function criaLogin() {
                 type="text"
                 name="login"
                 placeholder="login"
-                required
-            >
+                required>
         </div>
 
         <div class="campo">
@@ -158,8 +154,7 @@ function criaLogin() {
                 type="password"
                 name="senha"
                 placeholder="senha"
-                required
-            >
+                required>
         </div>
 
         <div class="botoes">
@@ -183,8 +178,7 @@ function pesquisaDinamica($action, $name, $inputname) {
                 type="text"
                 name="'.$inputname.'"
                 placeholder="Digite sua pesquisa"
-                required
-            >
+                required>
         </div>
 
         <div class="botoes">

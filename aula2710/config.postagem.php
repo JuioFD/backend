@@ -15,8 +15,7 @@ function criaFormularioCadastroPostagem() {
                 type="text"
                 name="titulo"
                 placeholder="Título da postagem"
-                required
-            >
+                required>
         </div>
 
         <div class="campo">
@@ -27,8 +26,8 @@ function criaFormularioCadastroPostagem() {
                 name="descricao"
                 rows="5"
                 placeholder="Descrição da postagem"
-                required
-            ></textarea>
+                required>
+                </textarea>
         </div>
 
         <div class="botoes">
@@ -40,8 +39,7 @@ function criaFormularioCadastroPostagem() {
 }
 
 function inserirPostagem($titulo, $descricao, $idUsuario, $conn) {
-    $sql = "INSERT INTO postagem (titulo, descricao, dta, idUsuario)
-            VALUES ('$titulo', '$descricao', NOW(), '$idUsuario')";
+    $sql = "INSERT INTO postagem (titulo, descricao, dta, idUsuario) VALUES ('$titulo', '$descricao', NOW(), '$idUsuario')";
 
     $resultado = mysqli_query($conn, $sql);
 
@@ -57,16 +55,61 @@ function deletarPostagem($id, $conn) {
 }
 
 function atualizarPostagem($id, $titulo, $descricao, $dta, $idUsuario, $conn) {
-    $sql = "UPDATE postagem
-            SET titulo = '$titulo',
-                descricao = '$descricao',
-                dta = '$dta',
-                idUsuario = '$idUsuario'
-            WHERE id = $id";
+    $sql = "UPDATE postagem SET titulo = '$titulo', descricao = '$descricao', dta = '$dta', idUsuario = '$idUsuario' WHERE id = $id";
 
     $resultado = mysqli_query($conn, $sql);
 
     return $resultado;
+}
+
+function buscarPostagem($id, $conn) {
+    $dados = "";
+
+    $sql = "SELECT * FROM postagem WHERE id = $id";
+    $resultado = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($resultado) > 0) {
+        $dados = mysqli_fetch_assoc($resultado);
+    }
+
+    return $dados;
+}
+
+function formularioEdicaoPostagem($idPostagem, $tituloPostagem, $descricaoPostagem) {
+    return '<main>
+    <form class="login editar-usuario" action="editar-postagem.php?id='.$idPostagem.'" method="POST">
+        <h1>Formulário de Edição de Postagem</h1>
+
+        <div class="campo">
+            <ion-icon name="create-outline"></ion-icon>
+            Título
+            <input
+                class="input-login"
+                type="text"
+                name="titulo"
+                placeholder="Título da postagem"
+                value="'.$tituloPostagem.'"
+                required>
+        </div>
+
+        
+        <div class="campo">
+            <ion-icon name="document-text-outline"></ion-icon>
+            Descrição
+            <textarea
+                class="input-login"
+                name="descricao"
+                rows="5"
+                required>'.$descricaoPostagem.'</textarea>
+            </div>
+
+
+        <div class="botoes">
+            <button type="submit" class="btn ativo">Editar</button>
+            <button type="reset" class="btn ativo">Limpar</button>
+        </div>
+    </form>
+</main>';
 }
 
 function listarPostagem($conn) {
@@ -93,6 +136,13 @@ function listarPostagem($conn) {
             $html .= "
                     <tr>
                         <td class='acoes'>
+                            <a
+                                class='btn editar'
+                                href='buscar.postagem.php?id=".$dados["id"]."'
+                            >
+                                <ion-icon name='pencil-outline'></ion-icon>
+                            </a>
+
                             <a
                                 class='btn excluir'
                                 href='deletar-postagem.php?id=".$dados["id"]."'
@@ -151,3 +201,4 @@ function listarPostagemUsuario($idUsuario, $conn) {
 }
 
 ?>
+
