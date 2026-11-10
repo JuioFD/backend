@@ -1,3 +1,4 @@
+
 <?php
 
 function verificaMensagem() {
@@ -40,15 +41,16 @@ function criaMenu($logado) {
     $menu = "";
 
     if ($logado == 1) {
-        $menu = '<nav> 
+        $menu = '<nav>
         '.criarLinkMenu("perfil.php", '<ion-icon name="person-outline"></ion-icon>', "Perfil").'
+        '.criarLinkMenu("cadastrar-postagem.php", '<ion-icon name="add-circle-outline"></ion-icon>', "Cadastrar Postagem").'
         '.criarLinkMenu("listar_postagem.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Postagens").'
         '.criarLinkMenu("cadastrar-usuario.php", '<ion-icon name="log-in-outline"></ion-icon>', "Cadastrar Usuario").'
         '.criarLinkMenu("lista_usuario.php", '<ion-icon name="search-outline"></ion-icon>', "Listar Usuario").'
         '.criarLinkMenu("sair.php", '<ion-icon name="exit-outline"></ion-icon>', "Sair").'
         </nav>';
     } else {
-        $menu = '<nav> 
+        $menu = '<nav>
         '.criarLinkMenu("index.php", "<ion-icon name='home-outline'></ion-icon>", "Início").'
         '.criarLinkMenu("posts.php", "<ion-icon name='paper-plane-outline'></ion-icon>", "Postagens").'
         '.criarLinkMenu("login.php", '<ion-icon name="lock-closed-outline"></ion-icon>', "Acessar").'
@@ -214,7 +216,6 @@ function criaMensagem($tipo, $mensagem) {
 
     return $html;
 }
-
 function paginaRestrita($logado, $pagina = "login.php", $mensagem = "Necessário fazer login para acessar página restrita") {
     if ($logado != 1) {
         header("Location: $pagina?tipo=0&mensagem=$mensagem");

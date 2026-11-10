@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -14,6 +15,7 @@ $usuario = buscarLogin($nome, $senha_cript, $conn);
 if ($usuario != "") {
     $_SESSION["logado"] = 1;
     $_SESSION["nome"] = $usuario["email"];
+    $_SESSION["id"] = $usuario["id"];
 
     header("Location: perfil.php?tipo=1&mensagem=Login realizado com sucesso!");
 } else {
