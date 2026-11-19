@@ -1,16 +1,23 @@
 <?php
 
-require("config.php");
+session_start();
 
-echo criarTopo();
+require("config.php");
+require("config-usuario.php");
+require("config.postagem.php");
+
+$logado = @$_SESSION["logado"];
+
+echo criarTopo($logado);
 
 ?>
 
 <main>
-    <h1>Olá Projeto Postagens</h1>
+    <?php echo criarCardsPostagens($conn); ?>
 </main>
 
 <?php
+
 echo criarRodape();
 
 ?>

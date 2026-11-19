@@ -39,10 +39,15 @@ function criaFormularioCadastroPostagem() {
 }
 
 function listarPostagemDados($conn) {
-    $sql = "SELECT * FROM `postagem`";
-
+    $sql = "SELECT * FROM 'postagens'";
     $resultado = mysqli_query($conn, $sql);
+    
+    if ($resultado && mysqli_num_rows($resultado) > 0) {
+
+    while ($dado = mysqli_fetch_assoc($resultado));
+
     return $resultado;
+    }
 }
 
 
@@ -148,7 +153,6 @@ function buscarPostagem($id, $conn) {
 
     return $dados;
 }
-
 function formularioEdicaoPostagem($idPostagem, $tituloPostagem, $descricaoPostagem) {
     return '<main>
     <form class="login editar-usuario" action="editar-postagem.php?id='.$idPostagem.'" method="POST">
